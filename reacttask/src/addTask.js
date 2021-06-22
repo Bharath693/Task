@@ -9,7 +9,6 @@ import { useDispatch } from 'react-redux'
 async function submitTask(credetials) {
     return fetch("https://stage.api.sloovi.com/task/lead_6996a7dcdddc4af3b4f71ccb985cea38", {
         method: "POST",
-        data:credetials,
         headers: {
             'Authorization': 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjQwMDYwMDUsIm5iZiI6MTYyNDAwNjAwNSwianRpIjoiM2Q0YWM2ZGYtMDc4OC00NjIwLWIxZDAtNDM4YjgxM2E2OTY4IiwiaWRlbnRpdHkiOnsibmFtZSI6IlN1YmkgU2lyIiwiZW1haWwiOiJzbWl0aGNoZXJ5bEB5YWhvby5jb20iLCJ1c2VyX2lkIjoidXNlcl82YmVlYzQ1OTkxNWY0NTA3YThkMjUyMGU2MGUwM2MzZSIsImNvbXBhbnlfaWQiOiJjb21wYW55XzNjNjhjZDk0ZWJkNjQ4Yzc4ZDc2ODcyY2ZhOWY4Y2ZiIiwiaWNvbiI6Imh0dHA6Ly93d3cuZ3JhdmF0YXIuY29tL2F2YXRhci9mMmU5YWNkZWM4MTdlMjRkMjk4MGQ4NTNlODkzODVmNT9kZWZhdWx0PWh0dHBzJTNBJTJGJTJGczMuc2xvb3ZpLmNvbSUyRmF2YXRhci1kZWZhdWx0LWljb24ucG5nIiwiYnlfZGVmYXVsdCI6Im91dHJlYWNoIn0sImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.VB669RfV2l5RycCifHllIWTiMLBSPPbot2djEmoZrCE',
             'Accept': 'application/json',
@@ -17,7 +16,7 @@ async function submitTask(credetials) {
         },
         body:{
             assigned_user:"user_6beec459915f4507a8d2520e60e03c3e",
-           
+            credetials
         }
     })
         .then(res => res.json())
